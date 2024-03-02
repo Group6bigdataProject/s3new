@@ -16,7 +16,7 @@ jobs:
       - name: Deploy CloudFormation Stack
         run: |
           aws cloudformation deploy \
-            --stack-name Group6demoFlast \
+            --stack-name Group6demoFlastwer \
             --template-file .github/workflows/cft.yml \
             --capabilities CAPABILITY_NAMED_IAM
         env:
