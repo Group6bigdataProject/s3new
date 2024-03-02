@@ -6,7 +6,7 @@ from awsglue.context import GlueContext
 from awsglue.job import Job
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType
-#
+
 ## @params: [JOB_NAME]
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
 
@@ -52,7 +52,7 @@ df4 = df3.withColumnRenamed("Crime ID", "CrimeID") \
     .withColumnRenamed("LSOA name", "LSOANAME")
 
 # Write to Parquet
-df4.coalesce(1).write.parquet("s3://group56datalake44/street/", mode="append")
+df4.coalesce(1).write.parquet("s3://group56datalake44shoja/street/", mode="append")
 
 # Fetching data from RDS
 # Read data from RDS using Glue Catalog
@@ -78,7 +78,7 @@ df2 = rds_df.withColumnRenamed("Crime ID", "CrimeID") \
     .withColumnRenamed("last outcome category", "lastoutcomecategory")
 
 # Write to Parquet
-df2.repartition(90).write.parquet("s3://group56datalake44/outcomes/", mode="append")
+df2.repartition(90).write.parquet("s3://group56datalake44shoja/outcomes/", mode="append")
 
 # Stop SparkSession
 spark.stop()

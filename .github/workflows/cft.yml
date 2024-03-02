@@ -4,12 +4,12 @@ Resources:
   SourceBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: group56datalake44s
+      BucketName: group56datalake44shoja
 
   DestinationBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: group56datawarehouse34re
+      BucketName: group56datawarehouse34rels
 
   IngestionGlueJob:
     Type: AWS::Glue::Job
@@ -109,7 +109,7 @@ Resources:
       DatabaseName: crimelast1 # Replace with your desired Glue database name
       Targets:
         S3Targets:
-          - Path: s3://group56datawarehouse34re/OUTCOMES/ # Specify the path of the bucket you want to crawl
+          - Path: s3://group56datawarehouse34rels/OUTCOMES/ # Specify the path of the bucket you want to crawl
       Role: arn:aws:iam::118745602372:role/LabRole
 
   DataCrawler2:
@@ -125,7 +125,7 @@ Resources:
       DatabaseName: crimelast1 # Replace with your desired Glue database name
       Targets:
         S3Targets:
-          - Path: s3://group56datawarehouse34re/STREET/ # Specify the path of the bucket you want to crawl
+          - Path: s3://group56datawarehouse34rels/STREET/ # Specify the path of the bucket you want to crawl
       Role: arn:aws:iam::118745602372:role/LabRole
 
   GlueTriggerForCrawler1:

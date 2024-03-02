@@ -19,7 +19,7 @@ job.init(args['JOB_NAME'], args)
 
 # Read data from S3
 
-df1 = spark.read.parquet("s3://group56datalake44/street/")
+df1 = spark.read.parquet("s3://group56datalake44shoja/street/")
 
 
 # Perform data processing steps
@@ -44,10 +44,10 @@ df1 = df1.withColumn("Latitude", col("Latitude").cast(DoubleType())) \
          .withColumn('MONTH', to_date(col('MONTH'), 'yyyy-MM'))
 
 # Write the DataFrame to Parquet
-df1.write.mode("append").parquet("s3://group56datawarehouse34re/STREET")
+df1.write.mode("append").parquet("s3://group56datawarehouse34rels/STREET")
 
 # Read data from outcomes for transformation
-df2 = spark.read.parquet("s3://group56datalake44/outcomes/")
+df2 = spark.read.parquet("s3://group56datalake44shoja/outcomes/")
 
 # Read data from outcomes for transformation
 df4 = df2.drop("col13","col14","context","crimetype", "partition_0","lastoutcomecategory")
@@ -75,7 +75,7 @@ df2 = df_repartitioned
 
 # Write the transformed DataFrame to Parquet
 
-df2.write.mode("append").parquet("s3://group56datawarehouse34re/OUTCOMES")
+df2.write.mode("append").parquet("s3://group56datawarehouse34rels/OUTCOMES")
 
 # Commit the job
 job.commit()
