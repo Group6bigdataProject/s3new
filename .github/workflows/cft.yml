@@ -18,14 +18,14 @@ Resources:
       - DestinationBucket
     Properties:
       Name: crime-ingestion111f
-      Role: arn:aws:iam::385509221169:role/LabRole
+      Role: arn:aws:iam::118745602372:role/LabRole
       GlueVersion: '2.0'  # Glue version should be set to 2.0 for AWS Glue 2.0
       Timeout: 230
       WorkerType: G.1X
       NumberOfWorkers: 12
       Command:
         Name: glueetl
-        ScriptLocation: s3://inject111/injesion.py
+        ScriptLocation: s3://injectw11/injesion.py
       DefaultArguments:
         "--job-language": "python"
       ExecutionProperty:
@@ -35,14 +35,14 @@ Resources:
     Type: AWS::Glue::Job
     Properties:
       Name: crime-transformation111f
-      Role: arn:aws:iam::385509221169:role/LabRole
+      Role: arn:aws:iam::118745602372:role/LabRole
       GlueVersion: 4.0
       NumberOfWorkers: 12
       Timeout: 30
       WorkerType: G.1X
       Command:
         Name: glueetl
-        ScriptLocation: s3://inject111/transform.py
+        ScriptLocation: s3://injectw11/transform.py
       DefaultArguments:
         "--job-language": "python"
       ExecutionProperty:
@@ -110,7 +110,7 @@ Resources:
       Targets:
         S3Targets:
           - Path: s3://group-6-datawarehousenewrte6dwtyyf/OUTCOMES/ # Specify the path of the bucket you want to crawl
-      Role: arn:aws:iam::385509221169:role/LabRole
+      Role: arn:aws:iam::118745602372:role/LabRole
 
   DataCrawler2:
     Type: AWS::Glue::Crawler
@@ -126,7 +126,7 @@ Resources:
       Targets:
         S3Targets:
           - Path: s3://group-6-datawarehousenewrte6dwtyyf/STREET/ # Specify the path of the bucket you want to crawl
-      Role: arn:aws:iam::385509221169:role/LabRole
+      Role: arn:aws:iam::118745602372:role/LabRole
 
   GlueTriggerForCrawler1:
     Type: AWS::Glue::Trigger
