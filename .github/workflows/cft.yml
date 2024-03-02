@@ -17,7 +17,7 @@ Resources:
       - SourceBucket
       - DestinationBucket
     Properties:
-      Name: s3://injectw11/injesion.py
+      Name: injection12re
       Role: arn:aws:iam::118745602372:role/LabRole
       GlueVersion: '2.0'  # Glue version should be set to 2.0 for AWS Glue 2.0
       Timeout: 230
