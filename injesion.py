@@ -37,7 +37,7 @@ df4 = df3.withColumnRenamed("Crime ID","CrimeID") \
 # Write to Parquet
 
 
-df4.coalesce(1).write.parquet("s3://group-6-datalakenew23re6dlref/street/", mode="append")
+df4.coalesce(1).write.parquet("s3://group-6-datalakenew23re6dlrefyuti/street/", mode="append")
  
 
 # Fetching data from RDS
@@ -65,7 +65,7 @@ df2 = rds_df.withColumnRenamed("Crime ID","CrimeID") \
 
 # Write to Parquet
 
-df2.repartition(90).write.parquet("s3://group-6-datalakenew23re6dlref/outcomes/", mode="append")
+df2.repartition(90).write.parquet("s3://group-6-datalakenew23re6dlrefyuti/outcomes/", mode="append")
 
 # Stop SparkSession
 spark.stop()

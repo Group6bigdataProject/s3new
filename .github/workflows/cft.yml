@@ -4,12 +4,12 @@ Resources:
   SourceBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: group-6-datalakenew23re6dlref
+      BucketName: group-6-datalakenew23re6dlrefyuti
 
   DestinationBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: group-6-datawarehousenewrte6dwtyyf
+      BucketName: group-6-datawarehousenewrte6dwtyyfree
 
   IngestionGlueJob:
     Type: AWS::Glue::Job
