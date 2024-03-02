@@ -6,7 +6,7 @@ from awsglue.context import GlueContext
 from awsglue.job import Job
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType
-
+#
 ## @params: [JOB_NAME]
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
 
